@@ -1,5 +1,5 @@
 <template>
-  <div class="content" v-on:click='emitRecipe()'>
+  <div class="content" v-on:click="emitRecipe()">
     <img v-bind:src="object.recipe.image" alt="" />
     <div class="information">
       <p>{{ object.recipe.label }}</p>
@@ -18,7 +18,7 @@ export default {
     alert: function() {
       alert(this.name);
     },
-    emitRecipe: function(){
+    emitRecipe(){
       this.$emit('emitRecipe', this.object);
     }
   },

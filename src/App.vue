@@ -1,22 +1,22 @@
 <template>
   <div id="app">
-    <main-page></main-page>
+    <router-view class="router-view"></router-view>
   </div>
 </template>
 
 <script>
-import MainPage from './components/MainPage.vue'
 export default {
-  components:{
-    'main-page' : MainPage
-  },
-  data() {
-    return {
-     
-    };
-  },
   
-  };
+};
 </script>
 
-<style></style>
+<style scoped>
+#app {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+.router-view{
+  width: 100%;
+}
+</style>

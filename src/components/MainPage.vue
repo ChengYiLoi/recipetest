@@ -1,28 +1,17 @@
 <template>
   <div>
-    <searchbar v-on:updateRecipes="changeRecipes($event)"></searchbar>
-    <div class="container" v-if="!isDisplayRecipe">
-      <recipeCard
-        v-for="object in recipeArray"
-        :key="object.recipe.url"
-        v-bind:object="object"
-        v-on:emitRecipe='updateSelectedRecipe($event)'
-      ></recipeCard>
+      <div class="banner">
+      <img src="../assets/hero.jpg" alt="">
     </div>
-    <div class="container" v-if="isDisplayRecipe">
-      <recipePage v-bind:object='selected' v-on:emitDisplay="updateDisplayRecipe()"></recipePage>
-    </div>
+    <searchbar v-bind:isMainPage=true></searchbar>
   </div>
 </template>
 
 <script>
 import searchbar from './searchbar.vue'
-import recipeCard from "./recipeCard.vue";
-import recipePage from './recipepage.vue';
+
 export default {
   components: {
-    recipeCard,
-    recipePage,
     searchbar
   },
   data() {
@@ -51,9 +40,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.container {
+div{
+  height: 100%;
+  .container {
   margin: 10px 40px;
   display: grid;
   grid-template-columns: repeat(5, auto);
 }
+}
+
 </style>
